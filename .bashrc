@@ -82,7 +82,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    alias cdgit='cd /mnt/d/data/hyuk/git'
 fi
 
 # colored GCC warnings and errors
@@ -92,6 +91,10 @@ fi
 alias l='ls -alF'
 alias la='ls -A'
 alias ll='ls -CF'
+alias cdgit='cd /mnt/d/data/hyuk/git'
+alias md='mkdir -p'
+alias cls='clear'
+alias refresh='source ~/.bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

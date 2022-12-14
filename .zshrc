@@ -91,17 +91,19 @@ alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias cdfl='d /mnt/c/Users/hyukM6/StudioProjects/khcho/lib'
 alias h='history -i'
+alias vim='nvim'
+alias vi='nvim'
 alias nv='nvim'
+alias vimdiff="nvim -d"
 alias refresh='source ~/.zshrc'
 alias cls='clear'
+alias md='mkdir -p'
 alias cdgit='cd /mnt/d/data/hyuk/git'
 
 # history
 HISTFILE=~/.zsh_history
 
 # source
-# plug "$HOME/.config/zsh/aliases.zsh"
-# plug "$HOME/.config/zsh/exports.zsh"
 
 # User configuration
 
@@ -113,4 +115,26 @@ HISTFILE=~/.zsh_history
 
 
 export PATH="$HOME/.bin":$PATH
+export EDITOR=/usr/local/bin/nvim
 
+############## more aliases
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+# alias cp="cp -i"
+# alias mv='mv -i'
+# alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+alias ls='ls --color=auto'
