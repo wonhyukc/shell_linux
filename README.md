@@ -1,1 +1,1 @@
-# shell_linux
+# shell scripts, linux setup, environment files
