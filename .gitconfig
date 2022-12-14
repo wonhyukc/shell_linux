@@ -1,0 +1,18 @@
+[alias]
+	a = !git config --get-regexp alias
+	ac = !git add . && git commit -m 
+	b = branch
+	br = !git branch | awk \"/^\\\\*/{print $2}\"
+	c = commit -m
+	ch = checkout
+	h = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit	
+  last = log -1 HEAD
+  pp = !git push && git pull
+	s = status
+	unstage = reset HEAD --
+[core]
+	editor = vim
+[user]
+	name = Wonhyuk Chung
+	email = myLoveSarah@gmail.com
