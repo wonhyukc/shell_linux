@@ -4,6 +4,8 @@
 " Author: Wang Shidong < wsdjeg@outlook.com >
 " URL: https://spacevim.org
 " License: GPLv3
+"
+" default Location: ~/.config/nvim/init.vim
 "=============================================================================
 
 " set default encoding to utf-8
