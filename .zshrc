@@ -86,20 +86,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
 bindkey -v # vi mode
 
-
-alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias cdfl='d /mnt/c/Users/hyukM6/StudioProjects/khcho/lib'
-alias h='history -i'
-alias vim='nvim'
-alias vi='nvim'
-alias nv='nvim'
-alias vimdiff="nvim -d"
-alias refresh='source ~/.zshrc'
-alias cls='clear'
-alias md='mkdir -p'
-alias cdgit='cd /mnt/d/data/hyuk/git'
-
 # history
 HISTFILE=~/.zsh_history
 
@@ -116,6 +102,9 @@ HISTFILE=~/.zsh_history
 
 export PATH="$HOME/.bin":$PATH
 export EDITOR=/usr/local/bin/nvim
+
+
+
 
 ############## more aliases
 alias grep='grep --color=auto'
@@ -137,4 +126,30 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
+alias md='mkdir -p'
+alias cdgit='cd /mnt/d/data/hyuk/git'
+
 alias ls='ls --color=auto'
+alias lR='ls --color=auto -lahR'
+
+alias zshconfig="nvim ~/.zshrc"
+alias refresh='source ~/.zshrc'
+
+# alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias cdfl='cd ~/git/flutter/'
+
+# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.
+alias vim='nvim'
+alias vi='nvim'
+alias nv='nvim'
+alias vimdiff="nvim -d"
+
+alias cls='clear'
+alias c='clear'
+
+alias a=alias 
+alias ag='alias |grep ' 
+
+alias hg='histroy |grep ' 
+alias ha='history -i'
+alias h='histroy -10' 
