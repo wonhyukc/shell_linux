@@ -132,7 +132,7 @@ alias cdgit='cd /mnt/d/data/hyuk/git'
 alias ls='ls --color=auto'
 alias lR='ls --color=auto -lahR'
 
-alias zshconfig="nvim ~/.zshrc"
+alias zshconfig="vi ~/.zshrc"
 alias refresh='source ~/.zshrc'
 
 # alias ohmyzsh="nvim ~/.oh-my-zsh"
