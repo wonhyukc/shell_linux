@@ -77,16 +77,6 @@ inoremap <C-F4> <C-O><C-W>c
 cnoremap <C-F4> <C-C><C-W>c
 onoremap <C-F4> <C-C><C-W>c
 
-" restore 'cpoptions'
-set cpo&
-if 1
-  let &cpoptions = s:save_cpo
-  unlet s:save_cpo
-endif
-
-
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " VI 기본 설정
@@ -114,4 +104,4 @@ set sw=4               " 자동들여쓰기를 4칸으로 설정 (shift width)
 set ts=4               " TAB 간격을 4칸으로 설정 (tab stop)
 "set scs                " 똑똑한 대소문자 구별 기능 사용
 set ic!                " 대소문자 구별 기능 사용 안 함
-set cul                " 커서가 있는 라인 하이라이트e
+set cul                " 커서가 있는 라인 하이라이트
