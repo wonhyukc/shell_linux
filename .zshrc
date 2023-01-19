@@ -1,3 +1,4 @@
+# 230119 william. 중복제거, 오타 수정.
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -107,6 +108,8 @@ export EDITOR=/usr/local/bin/nvim
 
 
 ############## more aliases
+alias update='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
+
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -122,7 +125,6 @@ alias free='free -m' # show sizes in MB
 
 # get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4 | head -5'
-
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
@@ -130,6 +132,7 @@ alias md='mkdir -p'
 alias cdgit='cd /mnt/d/data/hyuk/git'
 
 alias ls='ls --color=auto'
+alias dir='ls --color=auto'
 alias lR='ls --color=auto -lahR'
 
 alias zshconfig="vi ~/.zshrc"
@@ -150,6 +153,6 @@ alias c='clear'
 alias a=alias 
 alias ag='alias |grep ' 
 
-alias hg='histroy |grep ' 
+alias hg='history |grep ' 
 alias ha='history -i'
-alias h='histroy -10' 
+alias h='history -10' 

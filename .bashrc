@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# 20230119 William
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -72,34 +74,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias l='ls -alF'
-alias la='ls -A'
-alias ll='ls -CF'
-alias cdgit='cd /mnt/d/data/hyuk/git'
-alias md='mkdir -p'
-alias cls='clear'
-alias refresh='source ~/.bashrc'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -120,7 +94,55 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='ls --color=auto'
+    #alias vdir='vdir --color=auto'
 
-alias cdfl='cd /mnt/c/Users/hyukM6/StudioProjects/khcho/lib'
-alias al='alias'
-alias h='history -i'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# some more ls aliases
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+alias update='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
+
+alias l='ls -alF'
+alias la='ls -A'
+alias ll='ls -CF'
+alias lR='ls --color=auto -lahR'
+
+alias md='mkdir -p'
+alias cls='clear'
+alias c='clear'
+
+alias shconfig="vi ~/.bashrc"
+alias refresh='source ~/.bashrc'
+
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+alias md='mkdir -p'
+
+alias a=alias
+alias ag='alias |grep '
+
+alias hg='history |grep '
+alias ha='history -i'
+alias h='history -10'
+
+alias cdgt='cd /mnt/d/data/hyuk/git'
