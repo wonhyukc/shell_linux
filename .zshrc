@@ -140,7 +140,7 @@ alias refresh='source ~/.zshrc'
 
 # alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias cdfl='cd ~/git/flutter/'
-
+alias scp1='scp user1@sourceHost:/foler/file targetfile'
 # neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.
 alias vim='nvim'
 alias vi='nvim'
