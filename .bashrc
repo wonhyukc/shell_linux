@@ -146,3 +146,4 @@ alias ha='history -i'
 alias h='history -10'
 
 alias cdgt='cd /mnt/d/data/hyuk/git'
+alias scp1='scp user1@sourceHost:/foler/file targetfile'
