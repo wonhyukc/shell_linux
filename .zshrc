@@ -1,4 +1,3 @@
-# 230119 william. 중복제거, 오타 수정.
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -10,8 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-		ZSH_THEME="agnoster"
-	# ZSH_THEME="random"
+	# ZSH_THEME="agnoster"
+	# ZSH_THEME="skaro"
+	ZSH_THEME="random"
 
 	# Set list of themes to pick from when loading at random
 	# Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,9 +67,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
+# Which plugins would you like to load? Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -100,17 +98,24 @@ HISTFILE=~/.zsh_history
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
 export PATH="$HOME/.bin":$PATH
-export EDITOR=/usr/local/bin/nvim
+# export EDITOR=/usr/local/bin/nvim
+export EDITOR=vi
+export DISPLAY=:0
+ 
+# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.
+#alias vim='nvim'
+#alias vi='nvim'
+#alias nv='nvim'
+#alias vimdiff="nvim -d"
 
-
-
+alias zshconfig="vi ~/.zshrc"
+alias refresh='source ~/.zshrc'
+alias ohmyzsh="vi ~/.oh-my-zsh"
 
 ############## more aliases
-alias update='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
-
 alias grep='grep --color=auto'
+alias grepn='grep -n --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
@@ -118,6 +123,7 @@ alias fgrep='fgrep --color=auto'
 # alias cp="cp -i"
 # alias mv='mv -i'
 # alias rm='rm -i'
+alias md='mkdir -p'
 
 # easier to read disk
 alias df='df -h'     # human-readable sizes
@@ -125,27 +131,12 @@ alias free='free -m' # show sizes in MB
 
 # get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4 | head -5'
+
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-alias md='mkdir -p'
-alias cdgit='cd /mnt/d/data/hyuk/git'
-
 alias ls='ls --color=auto'
-alias dir='ls --color=auto'
 alias lR='ls --color=auto -lahR'
-
-alias zshconfig="vi ~/.zshrc"
-alias refresh='source ~/.zshrc'
-
-# alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias cdfl='cd ~/git/flutter/'
-alias scp1='scp user1@sourceHost:/foler/file targetfile'
-# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.
-alias vim='nvim'
-alias vi='nvim'
-alias nv='nvim'
-alias vimdiff="nvim -d"
 
 alias cls='clear'
 alias c='clear'
@@ -156,3 +147,17 @@ alias ag='alias |grep '
 alias hg='history |grep ' 
 alias ha='history -i'
 alias h='history -10' 
+
+alias gcM='git commit -m' 
+alias scp1='scp $1 hyuk@dockerBase:/tmp/'
+alias pgsql='tmux attach-session -t pgsql'
+dTmp='hyuk@dockerBase:/tmp/'
+
+# alias gac='echo ...\"$1\"... && git add \"$1\"'
+alias gac='echo ..."$1"... && git add "$1"'
+alias cdgt='cd ~/git'
+alias cdpg='cd ~/git/pgsql_hyuk101'
+alias cdpy='cd ~/git/pythonPrivate'
+alias cddl='cd ~/git/Dlight.pgsql/Scripts'
+alias cdfl='cd ~/git/androidStudio'
+
