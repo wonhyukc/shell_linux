@@ -115,7 +115,8 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 
 ############## more aliases
 alias grep='grep --color=auto'
-alias grepn='grep -n --color=auto'
+alias grepn='grep -n -i --color=auto'
+alias grepnc='grep -n --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
