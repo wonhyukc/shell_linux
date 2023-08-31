@@ -1,17 +1,13 @@
 #---------------------------------------------
 # 일반적으로 사용하는 
 export ZSH="$HOME/.oh-my-zsh"
+# export PATH="$HOME/.bin:$HOME/.local/bin":$PATH
 
 ZSH_THEME="agnoster"
 
 # 다음 랜덤 목록 중에서 선택해서 가져온다. 즐겨보자. 맘에 안드는 건 목록에서 삭제한다. 맘에 드는 건 첫줄에 옮기자.
 # ZSH_THEME="random"
-# ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "macovsky" "Soliah" "af-magic" "pygmalion" "frisk" "sonicradish" "kphoen" "dstufft" 
-# "tjkirch_mod"
-# "aussiegeek" "avit" "bira" "blinks" "bureau" "candy" "candy-kingdom" "clean" "cloud" "crcandy" "crunch" "cypher" "dallas" "darkblood" "daveverwer" "dieter" "dogenpunk" "dpoggi" "dst"  "duellj" "eastwood" "edvardm" "essembeh" "fino" "fino-time" "fishy" "flazz" "fletcherm" "fox" "frontcube" "funky" "gallifrey" "gallois" "gentoo" "geoffgarside" "gianu" "gnzh" "gozilla" "half-life" "humza" "intheloop" "itchy" "jaischeema" "jispwoso" "jnrowe" 
-# "jonathan" "josh" "jreese" "jtriley" "juanghurtado" "junkfood" "kafeitu" "kardan" "kennethreitz" "kiwi"  "lambda" "linuxonly" "lukerandall" "macovsky" "macovsky-ruby" "maran" "mgutz" "mh" "michelebologna" "mikeh" "miloshadzic" "minimal" "mira" "mlh" "mrtazz" "murilasso" "muse" "nanotech" "nebirhos" "norm" "obraun" "peepcode" "pmcgee" "pygmalion-virtualenv" 
-# "re5et" "rgm" "risto" "rkj" "rkj-repos" "simonoff" "simple" "skaro" "sorin" "steeef" "strug" "sunaku" "superjarin" "suvash" "takashiyoshida"  "tjkirch"  "tonotdo" "trapd00r" "wezm" "wezm+" "xiong-chiamiov-plus" "ys" "zhann"
-# )
+# ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "macovsky" "Soliah" "af-magic" "pygmalion" "frisk" "sonicradish" "kphoen" "dstufft" )
 
 # 사용하는 플러그인 목록을 추가한다.
 plugins=(
@@ -23,6 +19,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
 
 # keybinds: vi 명령어를 shell command에서 사용할 수 있다.
 # https://www.techrepublic.com/article/using-vi-key-bindings-in-bash-and-zsh/
