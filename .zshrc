@@ -41,6 +41,8 @@ bindkey -v # vi mode
 # history
 HISTFILE=~/.zsh_history
 
+alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
+
 alias zshconfig="vi ~/.zshrc"
 alias refresh='source ~/.zshrc'
 alias ohmyzsh="vi ~/.oh-my-zsh"
