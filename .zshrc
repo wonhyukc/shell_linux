@@ -1,10 +1,10 @@
 #---------------------------------------------
 # 일반적으로 사용하는 
 export ZSH="$HOME/.oh-my-zsh"
-if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then                                                                                  │# Uncomment the following line if you want to disable marking untracked files
-    export PATH="$HOME/.bin:$PATH"                                                                                            │# under VCS as dirty. This makes repository status check for large repositories
-  # export PATH="$HOME/.bin:$HOME/.local/bin":$PATH                                                                           │# much, much faster.
-fi                                                                                                                            │# DISABLE_UNTRACKED_FILES_DIRTY="true"
+if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
+    export PATH="$HOME/.bin:$PATH"
+  # export PATH="$HOME/.bin:$HOME/.local/bin":$PATH
+fi
 
 ZSH_THEME="agnoster"
 
