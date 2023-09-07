@@ -23,6 +23,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+
+# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.                                                                 │# see 'man strftime' for details.
+# alias vim='nvim'                                                                                                              │# HIST_STAMPS="mm/dd/yyyy"
+# alias vi='nvim'                                                                                                               │
+# alias nv='nvim'                                                                                                               │# Would you like to use another custom folder than $ZSH/custom?
+# alias vimdiff="nvim -d"
+
+
 # alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
 
 # keybinds: vi 명령어를 shell command에서 사용할 수 있다.
