@@ -24,10 +24,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.                                                                 │# see 'man strftime' for details.
-# alias vim='nvim'                                                                                                              │# HIST_STAMPS="mm/dd/yyyy"
-# alias vi='nvim'                                                                                                               │
-# alias nv='nvim'                                                                                                               │# Would you like to use another custom folder than $ZSH/custom?
+# neoVim을 사용하지 않는다면 다음 네 줄 주석 처리하는게 좋다.
+# alias vim='nvim'
+# alias vi='nvim'
+# alias nv='nvim'
 # alias vimdiff="nvim -d"
 
 
