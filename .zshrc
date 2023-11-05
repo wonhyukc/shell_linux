@@ -31,7 +31,6 @@ source $ZSH/oh-my-zsh.sh
 # alias vimdiff="nvim -d"
 
 
-# alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
 
 # keybinds: vi 명령어를 shell command에서 사용할 수 있다.
 # https://www.techrepublic.com/article/using-vi-key-bindings-in-bash-and-zsh/
@@ -55,6 +54,7 @@ alias grepnc='grep -nI --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+alias fnd='find . -name ' $1							
 # confirm before overwriting something
 # alias cp="cp -i"
 # alias mv='mv -i'
@@ -82,7 +82,18 @@ alias ag='alias |grep '
 
 alias hg='history |grep ' 
 alias ha='history -i'
-alias h='history -10' 
+alias h='history -30'
+
+alias host='cat /etc/hosts'
 
 # make a folder and cd
 mkcd() {  mkdir -p "$1" && cd $_ }
+
+alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
