@@ -89,8 +89,6 @@ alias host='cat /etc/hosts'
 # make a folder and cd
 mkcd() {  mkdir -p "$1" && cd $_ }
 
-alias updt='sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
-
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
