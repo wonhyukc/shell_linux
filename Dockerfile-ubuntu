@@ -1,0 +1,73 @@
+# ubuntu install 
+FROM ubuntu 
+MAINTAINER hyuk 
+
+# system 시간과 달라서 문제가 되어 시간 맞춰주는 명령 실행 후 실행
+# 이게 안되면 exit code: 100 오류 발생
+
+RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
+
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Seoul
+
+# 한글 로케일 설정
+ENV LANG ko_KR.utf8
+ENV LC_ALL ko_KR.utf8
+
+
+RUN apt-get update
+RUN apt-get upgrade -y 
+RUN apt-get install -y git ssh vim sudo openssh-server 
+RUN apt-get install -y wget zsh curl
+
+# 한글 로케일
+RUN apt-get install -y locales 
+RUN localedef -f UTF-8 -i ko_KR ko_KR.utf8 && ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+# zsh 설치. 기본 쉘을 zsh로 변경
+RUN apt-get -y install zsh 
+RUN chsh -s /usr/bin/zsh 
+
+# oh-my-zsh install 
+RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+
+WORKDIR /root
+
+# 폰트 추가 (옵션)
+RUN apt-get -y install fonts-powerline
+
+# zsh-autosuggestions, zsh-syntax-highlighting을 플러그인에 추가하는 코드
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+
+# .zshrc 파일을 github 파일로 덮어쓴다.
+RUN curl -o /root/.zshrc https://raw.githubusercontent.com/wonhyukc/shell_linux/main/.zshrc
+
+
+
+# ssh에서 id:password를 설정
+# 디폴트로 id = root, password = root. 보안을 위해 즉시 바꿔야 한다.
+# PermitRootLogin : 디폴트값을 yes로 바꾼다. ssh 연결을 위해서.
+RUN echo 'root:root' |chpasswd && \
+  sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+  sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
+  mkdir /root/.ssh && \
+  mkdir /var/run/sshd 
+
+# 시간대가 안맞는 경우를 대비
+RUN sudo apt-get install -y language-pack-en && sudo update-locale
+
+# 설치로 생성된 캐시 삭제. 용량 줄이기
+RUN apt-get clean && \
+    apt-get autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/cache/* && \
+    rm -rf /var/lib/log/*
+
+
+# EXPOSE : 해당 포트 외부 노출
+# ssh의 기본 포트  22
+EXPOSE 22 
+
+CMD ["zsh"]
